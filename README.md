@@ -1,6 +1,6 @@
 # Mixxx mapping for Launchpad mini
 
-In this repository you will find Bass The Wise's Mixxx mapping for Novation's Launchpad Mini. Chances are that it could be adapted to other launchpad versions.
+In this repository you will find Bass The Wise's Mixxx mapping for Novation's Launchpad Mini, which has been modified by Whanake for the Launchpad Mini Mk3.
 
 This mapping is largely based on jdsilvaa's work (https://github.com/jdsilvaa/mixxx-launchpad-mini), itself based on marczis and zestoi previous mappings for the controller. There is also a more advanced mapping from dszakallas (https://github.com/dszakallas/mixxx-launchpad); give it a try if you are looking for a very complete controller of 4 decks and 4 samplers!
 
@@ -29,9 +29,8 @@ This is a summary of the functionalities:
 The more or less detailed function for each button is as per this image:
 ![Novation Launchpad mini_MIXXX mapping](https://user-images.githubusercontent.com/81437860/113695764-880fcc00-96d1-11eb-930f-80eddde7412a.png)
 
-
-To finish, a disclaimer: my knowledge of JS is very limited, and because of my try-and-error approach the code would most likely profit from some editing and cleaning... I am open to suggestions. Also, this is my first repository in Github, which in part accounts for this bland README.
+Special thanks to Bass The Wise for most of this README.md, as well as everyone that worked to make this mapping possible. All I did was reformat a few things to work with the latest version of the Launchpad Mini series.
 
 Enjoy!
 
-Bass The Wise
+Bass The Wise (Edited by Whanake)
