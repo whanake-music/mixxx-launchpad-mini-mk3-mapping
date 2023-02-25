@@ -1,4 +1,4 @@
-# Mixxx mapping for Launchpad mini
+# Mixxx mapping for Launchpad Mini Mk3
 
 In this repository you will find Bass The Wise's Mixxx mapping for Novation's Launchpad Mini, which has been modified by Whanake for the Launchpad Mini Mk3.
 
