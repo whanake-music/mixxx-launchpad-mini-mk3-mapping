@@ -1,7 +1,8 @@
 /*************************************************************************************/
 /*      Novation Launchpad Mini Mapping                                              */
-/*      For Mixxx version 2.2.4                                                        */
-/*      Author: bassthewise based on jdsilvaa and marczis and zestoi's work          */
+/*      For Mixxx version 2.2.4                                                      */
+/*      Author: Whanake based on bassthewise, which was based on jdsilvaa and        */
+/*      marczis and zestoi's work                                                    */
 /*                                                                                   */
 /*************************************************************************************/
 
@@ -9,6 +10,9 @@
 colorCode = function()
 {
     return {
+	
+        /*
+	// Old Launchpad colours
         black: 4,
         lo_red: 1 + 4,
         mi_red: 2 + 4,
@@ -23,6 +27,59 @@ colorCode = function()
         lo_orange: 18 + 4,
         hi_yellow: 50 + 4,
         lo_yellow: 33 + 4,
+	*/
+
+	// Legacy colours re-formatted for RGB Launchpads
+        black: 0,
+        lo_red: 7,
+        mi_red: 6,
+        hi_red: 5,
+        lo_green: 23,
+        mi_green: 22,
+        hi_green: 21,
+        lo_amber: 15,
+        mi_amber: 14,
+        hi_amber: 13,
+        hi_orange: 9,
+        lo_orange: 10,
+        hi_yellow: 17,
+        lo_yellow: 18,
+
+	/*
+	// R+G+B palette for RGB Launchpads
+        black: 0,
+        lo_red: 7,
+        mi_red: 6,
+        hi_red: 5,
+        lo_green: 47,
+        mi_green: 46,
+        hi_green: 45,
+        lo_amber: 23,
+        mi_amber: 22,
+        hi_amber: 21,
+        hi_orange: 13,
+        lo_orange: 14,
+        hi_yellow: 33,
+        lo_yellow: 34,
+	*/
+
+	/*
+	// Red + Purple + Blue palette for RGB Launchpads
+        black: 0,
+        lo_red: 7,
+        mi_red: 6,
+        hi_red: 5,
+        lo_green: 47,
+        mi_green: 46,
+        hi_green: 45,
+        lo_amber: 55,
+        mi_amber: 54,
+        hi_amber: 53,
+        hi_orange: 57,
+        lo_orange: 58,
+        hi_yellow: 49,
+        lo_yellow: 50,
+	*/
     }
 };
 //Define one Key
@@ -52,10 +109,10 @@ Key.prototype.draw = function()
 {
     if ( this.page != NLM.page ) return;
     if ( this.y === 8 ) {
-        midi.sendShortMsg(0xb0, this.x + 0x68, this.color);
+        midi.sendShortMsg(0xb0, (this.y + 1) * 10 + this.x + 1, this.color);
         return;
     }
-    midi.sendShortMsg(0x90, this.x+this.y*16, this.color);
+    midi.sendShortMsg(0x90, (Math.abs(this.y - 8)) * 10 + this.x + 1, this.color);
     //midi.sendShortMsg(0xb0, 0x0, 0x28); //Enable buffer cycling
 }
 
@@ -2320,8 +2377,23 @@ NLM.incomingData = function(channel, control, value, status, group)
 
         var pressed = (value === 127);
         //Translate midi btn into index
+
+        /*
+        // Formula for old Launchpad model, using multiples of 16 to start each row
         var y = Math.floor(control / 16);
         var x = control - y * 16;
+	*/
+
+        // Formula for Launchpad Mini Mk3, using new MIDI layout for Programmer Mode
+        if ( control < 90 ) {
+            var y = Math.floor(Math.abs((control / 10 - 2) - 7))
+        } else {
+            var y = Math.floor(control / 10 - 1)
+	}
+	var x = control % 10 - 1
+    
+    // This code prevents Page 7 from working with the new Launchpad layout
+    /*
         if ( y === 6 && x > 8 ) {
             y = 8;
             x -= 8;
@@ -2329,6 +2401,7 @@ NLM.incomingData = function(channel, control, value, status, group)
         if ( y === 6 && x === 8 && status === 176 ) {
             y = 8; x = 0;
         }
+    */
 
         print( "COO: " + NLM.page + ":" + x + ":" + y);
         NLM.btns[NLM.page][x][y].pressed = pressed;
