@@ -1,201 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <MixxxControllerPreset mixxxVersion="2.2.4+" schemaVersion="1">
     <info>
-        <name>Novation Launchpad Mini</name>
-        <author>bassthewise</author>
+        <name>Novation Launchpad Mini Mk3</name>
+        <author>Whanake</author>
         <description>Multi page mapping for the Novation Launchpad Mini</description>
-        <forums>http://mixxx.org/forums/viewtopic.php?f=7&amp;t=6335</forums>
     </info>
     <controller id="Launchpad">
         <scriptfiles>
-            <file functionprefix="NLM" filename="Novation-Launchpad-Mini-scripts.js"/>
+            <file functionprefix="NLM" filename="Novation-Launchpad-Mini-Mk3-scripts.js"/>
         </scriptfiles>
         <controls>
             <control>
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x18</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x02</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x43</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x17</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x01</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x58</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x42</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x16</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x00</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x57</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x41</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x15</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x56</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x40</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x14</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x55</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x13</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x54</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
                 <status>0xB0</status>
-                <midino>0x6F</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x28</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x12</midino>
+                <midino>0x4F</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -212,8 +31,8 @@
             <control>
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
-                <status>0xB0</status>
-                <midino>0x6E</midino>
+                <status>0x90</status>
+                <midino>0x2C</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -222,25 +41,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x27</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x11</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x68</midino>
+                <midino>0x4E</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -258,7 +59,34 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0xB0</status>
-                <midino>0x6D</midino>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x2B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x51</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -276,7 +104,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x10</midino>
+                <midino>0x2A</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -285,25 +113,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x67</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x51</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0xB0</status>
-                <midino>0x6C</midino>
+                <midino>0x4C</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -321,7 +131,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x66</midino>
+                <midino>0x29</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -330,16 +140,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x50</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0xB0</status>
-                <midino>0x6B</midino>
+                <midino>0x4B</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -357,16 +158,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x65</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0xB0</status>
-                <midino>0x6A</midino>
+                <midino>0x4A</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -383,17 +175,8 @@
             <control>
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x64</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x38</midino>
+                <status>0xB0</status>
+                <midino>0x62</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -402,7 +185,16 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0xB0</status>
-                <midino>0x69</midino>
+                <midino>0x45</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x49</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -419,88 +211,7 @@
             <control>
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x63</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
                 <status>0xB0</status>
-                <midino>0x68</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x37</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x21</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x78</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x62</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x36</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x20</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x77</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
                 <midino>0x61</midino>
                 <options>
                     <script-binding/>
@@ -510,79 +221,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x35</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x76</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x60</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x34</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x08</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x75</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x33</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x07</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x74</midino>
+                <midino>0x44</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -599,8 +238,8 @@
             <control>
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
-                <status>0x90</status>
-                <midino>0x32</midino>
+                <status>0xB0</status>
+                <midino>0x1D</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -609,7 +248,16 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x06</midino>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x60</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -618,7 +266,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x73</midino>
+                <midino>0x43</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -636,6 +284,312 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x5F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x42</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x5E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x41</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x40</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x19</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x3B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x5C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x3F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x18</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x5B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x3A</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x3E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x13</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x17</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x39</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x3D</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x12</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x16</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x38</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x15</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
+                <midino>0x59</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x58</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0xB0</status>
                 <midino>0x31</midino>
                 <options>
                     <script-binding/>
@@ -645,7 +599,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x05</midino>
+                <midino>0x35</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -654,7 +608,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x72</midino>
+                <midino>0x57</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -663,7 +617,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x46</midino>
+                <midino>0x0E</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -681,7 +635,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x04</midino>
+                <midino>0x34</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -690,7 +644,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x71</midino>
+                <midino>0x56</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -699,7 +653,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x45</midino>
+                <midino>0x0D</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -708,7 +662,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x03</midino>
+                <midino>0x2F</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -717,7 +671,7 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x70</midino>
+                <midino>0x33</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -726,7 +680,52 @@
                 <group>[Master]</group>
                 <key>NLM.incomingData</key>
                 <status>0x90</status>
-                <midino>0x44</midino>
+                <midino>0x55</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x2E</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x54</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>NLM.incomingData</key>
+                <status>0x90</status>
+                <midino>0x2D</midino>
                 <options>
                     <script-binding/>
                 </options>
