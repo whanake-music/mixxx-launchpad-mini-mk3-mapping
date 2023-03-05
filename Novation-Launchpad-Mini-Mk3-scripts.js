@@ -10,76 +10,48 @@
 colorCode = function()
 {
     return {
-	
-        /*
-	// Old Launchpad colours
-        black: 4,
-        lo_red: 1 + 4,
-        mi_red: 2 + 4,
-        hi_red: 3 + 4,
-        lo_green: 16 + 4,
-        mi_green: 32 + 4,
-        hi_green: 48 + 4,
-        lo_amber: 17 + 4,
-        mi_amber: 34 + 4,
-        hi_amber: 51 + 4,
-        hi_orange: 35 + 4,
-        lo_orange: 18 + 4,
-        hi_yellow: 50 + 4,
-        lo_yellow: 33 + 4,
-	*/
-
-	// Legacy colours re-formatted for RGB Launchpads
         black: 0,
-        lo_red: 7,
-        mi_red: 6,
+	lo_white: 1,
+	mi_white: 2,
+	hi_white: 3,
+	max_red: 4,
         hi_red: 5,
-        lo_green: 23,
-        mi_green: 22,
-        hi_green: 21,
-        lo_amber: 15,
-        mi_amber: 14,
-        hi_amber: 13,
+        mi_red: 6,
+        lo_red: 7,
+	max_orange: 8,
         hi_orange: 9,
-        lo_orange: 10,
-        hi_yellow: 17,
-        lo_yellow: 18,
-
-	/*
-	// R+G+B palette for RGB Launchpads
-        black: 0,
-        lo_red: 7,
-        mi_red: 6,
-        hi_red: 5,
-        lo_green: 47,
-        mi_green: 46,
-        hi_green: 45,
-        lo_amber: 23,
-        mi_amber: 22,
-        hi_amber: 21,
-        hi_orange: 13,
-        lo_orange: 14,
-        hi_yellow: 33,
-        lo_yellow: 34,
-	*/
-
-	/*
-	// Red + Purple + Blue palette for RGB Launchpads
-        black: 0,
-        lo_red: 7,
-        mi_red: 6,
-        hi_red: 5,
-        lo_green: 47,
-        mi_green: 46,
-        hi_green: 45,
-        lo_amber: 55,
-        mi_amber: 54,
-        hi_amber: 53,
-        hi_orange: 57,
-        lo_orange: 58,
-        hi_yellow: 49,
-        lo_yellow: 50,
-	*/
+        mi_orange: 10,
+	lo_orange: 11,
+	max_yellow: 12,
+        hi_yellow: 13,
+	mi_yellow: 14,
+        lo_yellow: 15,
+	max_lime: 16,
+	hi_lime: 17,
+	mi_lime: 18,
+	lo_lime: 19,
+	max_green: 20,
+        hi_green: 21,
+        mi_green: 22,
+        lo_green: 23,
+	max_teal: 32,
+	hi_teal: 33,
+	mi_teal: 34,
+	lo_teal: 35,
+	max_cyan: 36,
+	hi_cyan: 37,
+	mi_cyan: 38,
+	lo_cyan: 39,
+	max_indigo: 40,
+	hi_indigo: 41,
+	mi_indigo: 42,
+	lo_indigo: 43,
+	max_blue: 44,
+	hi_blue: 45,
+	mi_blue: 46,
+	lo_blue: 47,
+	faint_purple: 71,
+	faint_blue: 103,
     }
 };
 //Define one Key
@@ -187,11 +159,11 @@ function ToogleLibrary(ctrl) {
 
     that.setled = function() {
         if (this.pressed) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else if (engine.getValue(this.group, that.ctrl) === 1) {
             this.setColor("hi_green");
         } else {
-            this.setColor("lo_amber");
+            this.setColor("lo_yellow");
         }
     }
 
@@ -224,7 +196,7 @@ function TooglePfl(ctrl, deck) {
 
     that.setled = function() {
         if (this.pressed) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else if (engine.getValue(this.group, that.ctrl) === 1) {
             this.setColor("hi_green");
         } else {
@@ -258,10 +230,12 @@ function PageSelectKey() {
 
     that.onPush = function()
     {
-        NLM.btns[NLM.page][8][NLM.page].setColor("black");
         NLM.page = this.y;
-        NLM.btns[NLM.page][8][NLM.page].setColor("hi_amber");
         NLM.drawPage();
+        for (i = 0; i < 8; i++) {
+	    NLM.btns[NLM.page][8][i].setColor("lo_blue");
+        };
+        NLM.btns[NLM.page][8][NLM.page].setColor("max_cyan");
     }
     return that;
 }
@@ -333,7 +307,7 @@ function Cue(ctrl, deck) {
         if (this.pressed) {
             this.setColor("lo_yellow");
         } else if (engine.getValue(this.group, that.ctrl) === 1) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else {
             this.setColor("hi_green");
         }
@@ -369,7 +343,7 @@ function GotoStart(ctrl, deck) {
         if (this.pressed) {
             this.setColor("lo_yellow");
         } else if (engine.getValue(this.group, that.ctrl) === 1) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else {
             this.setColor("hi_red");
         }
@@ -622,9 +596,9 @@ function SamplersBank(ctrl) {
         if (this.pressed) {
             this.setColor("lo_yellow");
         } else if (engine.getValue(this.group, that.ctrl) === 1) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         }
     }
 
@@ -659,7 +633,7 @@ function MasterVol(ctrl) {
         if (this.pressed) {
             this.setColor("lo_yellow");
         } else if (engine.getValue(this.group, that.ctrl) === 1) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else {
             this.setColor("hi_yellow");
         }
@@ -739,7 +713,7 @@ function HotCueKey(ctrl, deck, hotcue) {
 
     that.setled = function() {
         if (this.pressed) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else if (engine.getValue(this.group, this.state) === 1) {
             this.setColor("hi_green");
         } else {
@@ -822,7 +796,7 @@ function PlayKey(ctrl, deck) {
 
     that.setled = function() {
         if (this.pressed) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else if (engine.getValue(this.group, this.state) === 1) {
             this.setColor("mi_green");
         } else {
@@ -859,7 +833,7 @@ function PlayKeyS(ctrl, deck) {
 
     that.setled = function() {
         if (this.pressed) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else if (engine.getValue(this.group, this.state) === 1) {
             this.setColor("hi_red");
         } else {
@@ -905,7 +879,7 @@ function PlayKeyStart(ctrl, deck) {
 
     that.setled = function() {
         if (this.pressed) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else if (engine.getValue(this.group, this.state) === 1) {
             this.setColor("hi_red");
         } else {
@@ -943,7 +917,7 @@ function PeakIndicator(deck) {
 
     that.setled = function() {
         if (this.pressed) {
-            this.setColor("hi_amber");
+            this.setColor("hi_yellow");
         } else if (engine.getValue(this.group, this.state) === 1) {
             this.setColor("hi_red");
         } else {
@@ -1132,7 +1106,7 @@ function LoadKey2(ctrl, channel, color1, color2) {
 }
 
 function ZoomKey(dir) {
-    var that = PushKey("lo_green", "hi_amber");
+    var that = PushKey("lo_green", "hi_yellow");
 
     that.dir  = dir;
 
@@ -1160,7 +1134,7 @@ function ZoomKey(dir) {
 ZoomKey.zoom = 3;
 
 function RateKey(dir, deck) {
-    var that = PushKey("lo_orange", "hi_amber");
+    var that = PushKey("lo_orange", "hi_yellow");
     that.dir  = dir;
 	that.group = "[Channel" + deck + "]";
     that.onPushOrig = that.onPush;
@@ -1357,6 +1331,36 @@ function SeekKeySF(ch, pos, multiplier, color1, color2, param, check) {
 }
 SeekKeySF.keys = new Array();
 
+function SeekKeySFDown(ch, pos, multiplier, color1, color2, param, check) {
+    var that = new Key();
+
+    that.pos  = multiplier * pos;
+    that.grp = "[QuickEffectRack1_[Channel" + ch + "]]";
+    that.param = param;
+
+    that.setled = function()
+    {
+        if (engine.getValue(this.grp, this.param) <= this.pos) {
+            this.setColor(color1);
+        } else {
+            this.setColor(color2);
+        }
+    }
+
+    that.onPush = function()
+    {
+        engine.setValue(this.grp, this.param, this.pos);
+        SeekKeySF.keys[check].forEach(function(e) { e.setled(); });
+    }
+
+    that.setled();
+
+    if ( SeekKeySF.keys[check] === undefined ) SeekKeySF.keys[check] = new Array();
+    SeekKeySF.keys[check][pos] = that;
+    return that;
+}
+SeekKeySFDown.keys = new Array();
+
 function SeekKeyFi(ch, pos, multiplier, color1, color2, param, check) {
     var that = new Key();
 
@@ -1499,10 +1503,18 @@ NLM.init = function()
                 }
             }
         }
-        //Set default page led
-        NLM.btns[NLM.page][8][0].setColor("hi_amber");
+        //Set default page LEDs
+        NLM.btns[NLM.page][8][0].setColor("max_cyan");
+        NLM.btns[NLM.page][8][1].setColor("lo_blue");
+        NLM.btns[NLM.page][8][2].setColor("lo_blue");
+        NLM.btns[NLM.page][8][3].setColor("lo_blue");
+        NLM.btns[NLM.page][8][4].setColor("lo_blue");
+        NLM.btns[NLM.page][8][5].setColor("lo_blue");
+        NLM.btns[NLM.page][8][6].setColor("lo_blue");
+        NLM.btns[NLM.page][8][7].setColor("lo_blue");
 		
           page = 0;
+              
           // ============ CHANNEL 1 ==============
               deck = 1;
               // PLAY
@@ -1549,26 +1561,26 @@ NLM.init = function()
           // ============ CHANNEL 1 ==============
             deck = 1;
             // VOLUME
-            NLM.setupBtn(page,3,7, SeekKey2(deck, 0, 0.14, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,6, SeekKey2(deck, 1, 0.14, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,5, SeekKey2(deck, 2, 0.14, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,4, SeekKey2(deck, 3, 0.14, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,3, SeekKey2(deck, 4, 0.14, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,2, SeekKey2(deck, 5, 0.14, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,1, SeekKey2(deck, 6, 0.14, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,0, SeekKey2(deck, 7, 0.14, "hi_amber", "black", "volume", 9));
+            NLM.setupBtn(page,3,7, SeekKey2(deck, 0, 0.14, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,6, SeekKey2(deck, 1, 0.14, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,5, SeekKey2(deck, 2, 0.14, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,4, SeekKey2(deck, 3, 0.14, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,3, SeekKey2(deck, 4, 0.14, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,2, SeekKey2(deck, 5, 0.14, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,1, SeekKey2(deck, 6, 0.14, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,0, SeekKey2(deck, 7, 0.14, "hi_yellow", "black", "volume", 9));
           // =====================================
           // ============ CHANNEL 2 ==============
             deck = 2;
             // VOLUME
-            NLM.setupBtn(page,4,7, SeekKey2(deck, 0, 0.14, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,6, SeekKey2(deck, 1, 0.14, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,5, SeekKey2(deck, 2, 0.14, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,4, SeekKey2(deck, 3, 0.14, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,3, SeekKey2(deck, 4, 0.14, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,2, SeekKey2(deck, 5, 0.14, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,1, SeekKey2(deck, 6, 0.14, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,0, SeekKey2(deck, 7, 0.14, "hi_amber", "black", "volume", 10));
+            NLM.setupBtn(page,4,7, SeekKey2(deck, 0, 0.14, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,6, SeekKey2(deck, 1, 0.14, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,5, SeekKey2(deck, 2, 0.14, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,4, SeekKey2(deck, 3, 0.14, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,3, SeekKey2(deck, 4, 0.14, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,2, SeekKey2(deck, 5, 0.14, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,1, SeekKey2(deck, 6, 0.14, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,0, SeekKey2(deck, 7, 0.14, "hi_yellow", "black", "volume", 10));
           // =====================================
 			  // PROGRESS D1
 			  deck = 2;
@@ -1635,88 +1647,88 @@ NLM.init = function()
           // ============ CHANNEL 1 ==============
             deck = 1;
             // SUPERFILTER 
-            NLM.setupBtn(page,0,7, SeekKeySF(deck, 0, 0.125, "mi_red", "black", "super1", 1));
-            NLM.setupBtn(page,0,6, SeekKeySF(deck, 1, 0.125, "mi_red", "black", "super1", 1));
-            NLM.setupBtn(page,0,5, SeekKeySF(deck, 2, 0.125, "mi_red", "black", "super1", 1));
-            NLM.setupBtn(page,0,4, SeekKeySF(deck, 3, 0.125, "mi_red", "black", "super1", 1));
-            NLM.setupBtn(page,0,3, SeekKeySF(deck, 4, 0.125, "hi_green", "lo_amber", "super1", 1));
-            NLM.setupBtn(page,0,2, SeekKeySF(deck, 5, 0.125, "hi_red", "black", "super1", 1));
-            NLM.setupBtn(page,0,1, SeekKeySF(deck, 6, 0.125, "hi_red", "black", "super1", 1));
-            NLM.setupBtn(page,0,0, SeekKeySF(deck, 7, 0.125, "hi_red", "black", "super1", 1));
-            NLM.setupBtn(page,0,8, SeekKeySF(deck, 8, 0.125, "hi_red", "black", "super1", 1));
+            NLM.setupBtn(page,0,7, SeekKeySFDown(deck, 0, 0.125, "max_red", "black", "super1", 1));
+            NLM.setupBtn(page,0,6, SeekKeySFDown(deck, 1, 0.125, "max_red", "black", "super1", 1));
+            NLM.setupBtn(page,0,5, SeekKeySFDown(deck, 2, 0.125, "max_red", "black", "super1", 1));
+            NLM.setupBtn(page,0,4, SeekKeySFDown(deck, 3, 0.125, "max_red", "black", "super1", 1));
+            NLM.setupBtn(page,0,3, SeekKeySF(deck, 4, 0.125, "hi_white", "hi_white", "super1", 1));
+            NLM.setupBtn(page,0,2, SeekKeySF(deck, 5, 0.125, "hi_cyan", "black", "super1", 1));
+            NLM.setupBtn(page,0,1, SeekKeySF(deck, 6, 0.125, "hi_cyan", "black", "super1", 1));
+            NLM.setupBtn(page,0,0, SeekKeySF(deck, 7, 0.125, "hi_cyan", "black", "super1", 1));
+            NLM.setupBtn(page,0,8, SeekKeySF(deck, 8, 0.125, "hi_cyan", "black", "super1", 1));
             // FILTER HIGH
-            NLM.setupBtn(page,1,7, SeekKeyFi(deck, 0, 0.25, "lo_amber", "black", "parameter3", 2));
-            NLM.setupBtn(page,1,6, SeekKeyFi(deck, 1, 0.25, "lo_amber", "black", "parameter3", 2));
-            NLM.setupBtn(page,1,5, SeekKeyFi(deck, 2, 0.25, "lo_amber", "black", "parameter3", 2));
-            NLM.setupBtn(page,1,4, SeekKeyFi(deck, 3, 0.25, "lo_amber", "black", "parameter3", 2));
-            NLM.setupBtn(page,1,3, SeekKeyFi(deck, 4, 0.25, "hi_green", "lo_red", "parameter3", 2));
-            NLM.setupBtn(page,1,2, SeekKeyFi(deck, 5, 0.25, "hi_yellow", "black", "parameter3", 2));
-            NLM.setupBtn(page,1,1, SeekKeyFi(deck, 5, 0.35, "hi_yellow", "black", "parameter3", 2));
-            NLM.setupBtn(page,1,0, SeekKeyFi(deck, 6, 0.4166, "hi_yellow", "black", "parameter3", 2));
-            NLM.setupBtn(page,1,8, SeekKeyFi(deck, 8, 0.5, "hi_yellow", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,7, SeekKeyFi(deck, 0, 0.25, "lo_blue", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,6, SeekKeyFi(deck, 1, 0.25, "lo_blue", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,5, SeekKeyFi(deck, 2, 0.25, "lo_blue", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,4, SeekKeyFi(deck, 3, 0.25, "lo_blue", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,3, SeekKeyFi(deck, 4, 0.25, "max_cyan", "lo_white", "parameter3", 2));
+            NLM.setupBtn(page,1,2, SeekKeyFi(deck, 5, 0.25, "hi_blue", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,1, SeekKeyFi(deck, 5, 0.35, "hi_blue", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,0, SeekKeyFi(deck, 6, 0.4166, "hi_blue", "black", "parameter3", 2));
+            NLM.setupBtn(page,1,8, SeekKeyFi(deck, 8, 0.5, "hi_blue", "black", "parameter3", 2));
             // FILTER MID
-            NLM.setupBtn(page,2,7, SeekKeyFi(deck, 0, 0.25, "lo_amber", "black", "parameter2", 3));
-            NLM.setupBtn(page,2,6, SeekKeyFi(deck, 1, 0.25, "lo_amber", "black", "parameter2", 3));
-            NLM.setupBtn(page,2,5, SeekKeyFi(deck, 2, 0.25, "lo_amber", "black", "parameter2", 3));
-            NLM.setupBtn(page,2,4, SeekKeyFi(deck, 3, 0.25, "lo_amber", "black", "parameter2", 3));
-            NLM.setupBtn(page,2,3, SeekKeyFi(deck, 4, 0.25, "hi_green", "lo_red", "parameter2", 3));
-            NLM.setupBtn(page,2,2, SeekKeyFi(deck, 5, 0.25, "hi_yellow", "black", "parameter2", 3));
-            NLM.setupBtn(page,2,1, SeekKeyFi(deck, 5, 0.35, "hi_yellow", "black", "parameter2", 3));
-            NLM.setupBtn(page,2,0, SeekKeyFi(deck, 6, 0.4166, "hi_yellow", "black", "parameter2", 3));
-            NLM.setupBtn(page,2,8, SeekKeyFi(deck, 8, 0.5, "hi_yellow", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,7, SeekKeyFi(deck, 0, 0.25, "lo_green", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,6, SeekKeyFi(deck, 1, 0.25, "lo_green", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,5, SeekKeyFi(deck, 2, 0.25, "lo_green", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,4, SeekKeyFi(deck, 3, 0.25, "lo_green", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,3, SeekKeyFi(deck, 4, 0.25, "max_green", "lo_white", "parameter2", 3));
+            NLM.setupBtn(page,2,2, SeekKeyFi(deck, 5, 0.25, "hi_green", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,1, SeekKeyFi(deck, 5, 0.35, "hi_green", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,0, SeekKeyFi(deck, 6, 0.4166, "hi_green", "black", "parameter2", 3));
+            NLM.setupBtn(page,2,8, SeekKeyFi(deck, 8, 0.5, "hi_green", "black", "parameter2", 3));
             // FILTER LOW
-            NLM.setupBtn(page,3,7, SeekKeyFi(deck, 0, 0.25, "lo_amber", "black", "parameter1", 4));
-            NLM.setupBtn(page,3,6, SeekKeyFi(deck, 1, 0.25, "lo_amber", "black", "parameter1", 4));
-            NLM.setupBtn(page,3,5, SeekKeyFi(deck, 2, 0.25, "lo_amber", "black", "parameter1", 4));
-            NLM.setupBtn(page,3,4, SeekKeyFi(deck, 3, 0.25, "lo_amber", "black", "parameter1", 4));
-            NLM.setupBtn(page,3,3, SeekKeyFi(deck, 4, 0.25, "hi_green", "lo_red", "parameter1", 4));
-            NLM.setupBtn(page,3,2, SeekKeyFi(deck, 5, 0.25, "hi_yellow", "black", "parameter1", 4));
-            NLM.setupBtn(page,3,1, SeekKeyFi(deck, 5, 0.35, "hi_yellow", "black", "parameter1", 4));
-            NLM.setupBtn(page,3,0, SeekKeyFi(deck, 6, 0.4166, "hi_yellow", "black", "parameter1", 4));
-            NLM.setupBtn(page,3,8, SeekKeyFi(deck, 8, 0.5, "hi_yellow", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,7, SeekKeyFi(deck, 0, 0.25, "lo_red", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,6, SeekKeyFi(deck, 1, 0.25, "lo_red", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,5, SeekKeyFi(deck, 2, 0.25, "lo_red", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,4, SeekKeyFi(deck, 3, 0.25, "lo_red", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,3, SeekKeyFi(deck, 4, 0.25, "max_red", "lo_white", "parameter1", 4));
+            NLM.setupBtn(page,3,2, SeekKeyFi(deck, 5, 0.25, "hi_red", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,1, SeekKeyFi(deck, 5, 0.35, "hi_red", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,0, SeekKeyFi(deck, 6, 0.4166, "hi_red", "black", "parameter1", 4));
+            NLM.setupBtn(page,3,8, SeekKeyFi(deck, 8, 0.5, "hi_red", "black", "parameter1", 4));
           // ========================================
           // ============== CHANNEL 2 ===============
             deck = 2;
             // SUPERFILTER
-            NLM.setupBtn(page,4,7, SeekKeySF(deck, 0, 0.125, "mi_red", "black", "super1", 13));
-            NLM.setupBtn(page,4,6, SeekKeySF(deck, 1, 0.125, "mi_red", "black", "super1", 13));
-            NLM.setupBtn(page,4,5, SeekKeySF(deck, 2, 0.125, "mi_red", "black", "super1", 13));
-            NLM.setupBtn(page,4,4, SeekKeySF(deck, 3, 0.125, "mi_red", "black", "super1", 13));
-            NLM.setupBtn(page,4,3, SeekKeySF(deck, 4, 0.125, "hi_green", "lo_amber", "super1", 13));
-            NLM.setupBtn(page,4,2, SeekKeySF(deck, 5, 0.125, "hi_red", "black", "super1", 13));
-            NLM.setupBtn(page,4,1, SeekKeySF(deck, 6, 0.125, "hi_red", "black", "super1", 13));
-            NLM.setupBtn(page,4,0, SeekKeySF(deck, 7, 0.125, "hi_red", "black", "super1", 13));
-            NLM.setupBtn(page,4,8, SeekKeySF(deck, 8, 0.125, "hi_red", "black", "super1", 13));
+            NLM.setupBtn(page,4,7, SeekKeySFDown(deck, 0, 0.125, "max_red", "black", "super1", 13));
+            NLM.setupBtn(page,4,6, SeekKeySFDown(deck, 1, 0.125, "max_red", "black", "super1", 13));
+            NLM.setupBtn(page,4,5, SeekKeySFDown(deck, 2, 0.125, "max_red", "black", "super1", 13));
+            NLM.setupBtn(page,4,4, SeekKeySFDown(deck, 3, 0.125, "max_red", "black", "super1", 13));
+            NLM.setupBtn(page,4,3, SeekKeySF(deck, 4, 0.125, "hi_white", "hi_white", "super1", 13));
+            NLM.setupBtn(page,4,2, SeekKeySF(deck, 5, 0.125, "hi_cyan", "black", "super1", 13));
+            NLM.setupBtn(page,4,1, SeekKeySF(deck, 6, 0.125, "hi_cyan", "black", "super1", 13));
+            NLM.setupBtn(page,4,0, SeekKeySF(deck, 7, 0.125, "hi_cyan", "black", "super1", 13));
+            NLM.setupBtn(page,4,8, SeekKeySF(deck, 8, 0.125, "hi_cyan", "black", "super1", 13));
             // FILTER HIGH
-            NLM.setupBtn(page,5,7, SeekKeyFi(deck, 0, 0.25, "lo_amber", "black", "parameter3", 6));
-            NLM.setupBtn(page,5,6, SeekKeyFi(deck, 1, 0.25, "lo_amber", "black", "parameter3", 6));
-            NLM.setupBtn(page,5,5, SeekKeyFi(deck, 2, 0.25, "lo_amber", "black", "parameter3", 6));
-            NLM.setupBtn(page,5,4, SeekKeyFi(deck, 3, 0.25, "lo_amber", "black", "parameter3", 6));
-            NLM.setupBtn(page,5,3, SeekKeyFi(deck, 4, 0.25, "hi_green", "lo_red", "parameter3", 6));
-            NLM.setupBtn(page,5,2, SeekKeyFi(deck, 5, 0.25, "hi_yellow", "black", "parameter3", 6));
-            NLM.setupBtn(page,5,1, SeekKeyFi(deck, 5, 0.35, "hi_yellow", "black", "parameter3", 6));
-            NLM.setupBtn(page,5,0, SeekKeyFi(deck, 6, 0.4166, "hi_yellow", "black", "parameter3", 6));
-            NLM.setupBtn(page,5,8, SeekKeyFi(deck, 8, 0.5, "hi_yellow", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,7, SeekKeyFi(deck, 0, 0.25, "lo_blue", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,6, SeekKeyFi(deck, 1, 0.25, "lo_blue", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,5, SeekKeyFi(deck, 2, 0.25, "lo_blue", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,4, SeekKeyFi(deck, 3, 0.25, "lo_blue", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,3, SeekKeyFi(deck, 4, 0.25, "max_cyan", "lo_white", "parameter3", 6));
+            NLM.setupBtn(page,5,2, SeekKeyFi(deck, 5, 0.25, "hi_blue", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,1, SeekKeyFi(deck, 5, 0.35, "hi_blue", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,0, SeekKeyFi(deck, 6, 0.4166, "hi_blue", "black", "parameter3", 6));
+            NLM.setupBtn(page,5,8, SeekKeyFi(deck, 8, 0.5, "hi_blue", "black", "parameter3", 6));
             // FILTER MID
-            NLM.setupBtn(page,6,7, SeekKeyFi(deck, 0, 0.25, "lo_amber", "black", "parameter2", 7));
-            NLM.setupBtn(page,6,6, SeekKeyFi(deck, 1, 0.25, "lo_amber", "black", "parameter2", 7));
-            NLM.setupBtn(page,6,5, SeekKeyFi(deck, 2, 0.25, "lo_amber", "black", "parameter2", 7));
-            NLM.setupBtn(page,6,4, SeekKeyFi(deck, 3, 0.25, "lo_amber", "black", "parameter2", 7));
-            NLM.setupBtn(page,6,3, SeekKeyFi(deck, 4, 0.25, "hi_green", "lo_red", "parameter2", 7));
-            NLM.setupBtn(page,6,2, SeekKeyFi(deck, 5, 0.25, "hi_yellow", "black", "parameter2", 7));
-            NLM.setupBtn(page,6,1, SeekKeyFi(deck, 5, 0.35, "hi_yellow", "black", "parameter2", 7));
-            NLM.setupBtn(page,6,0, SeekKeyFi(deck, 6, 0.4166, "hi_yellow", "black", "parameter2", 7));
-            NLM.setupBtn(page,6,8, SeekKeyFi(deck, 8, 0.5, "hi_yellow", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,7, SeekKeyFi(deck, 0, 0.25, "lo_green", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,6, SeekKeyFi(deck, 1, 0.25, "lo_green", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,5, SeekKeyFi(deck, 2, 0.25, "lo_green", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,4, SeekKeyFi(deck, 3, 0.25, "lo_green", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,3, SeekKeyFi(deck, 4, 0.25, "max_green", "lo_white", "parameter2", 7));
+            NLM.setupBtn(page,6,2, SeekKeyFi(deck, 5, 0.25, "hi_green", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,1, SeekKeyFi(deck, 5, 0.35, "hi_green", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,0, SeekKeyFi(deck, 6, 0.4166, "hi_green", "black", "parameter2", 7));
+            NLM.setupBtn(page,6,8, SeekKeyFi(deck, 8, 0.5, "hi_green", "black", "parameter2", 7));
             // FILTER LOW
-            NLM.setupBtn(page,7,7, SeekKeyFi(deck, 0, 0.25, "lo_amber", "black", "parameter1", 8));
-            NLM.setupBtn(page,7,6, SeekKeyFi(deck, 1, 0.25, "lo_amber", "black", "parameter1", 8));
-            NLM.setupBtn(page,7,5, SeekKeyFi(deck, 2, 0.25, "lo_amber", "black", "parameter1", 8));
-            NLM.setupBtn(page,7,4, SeekKeyFi(deck, 3, 0.25, "lo_amber", "black", "parameter1", 8));
-            NLM.setupBtn(page,7,3, SeekKeyFi(deck, 4, 0.25, "hi_green", "lo_red", "parameter1", 8));
-            NLM.setupBtn(page,7,2, SeekKeyFi(deck, 5, 0.25, "hi_yellow", "black", "parameter1", 8));
-            NLM.setupBtn(page,7,1, SeekKeyFi(deck, 5, 0.35, "hi_yellow", "black", "parameter1", 8));
-            NLM.setupBtn(page,7,0, SeekKeyFi(deck, 6, 0.4166, "hi_yellow", "black", "parameter1", 8));
-            NLM.setupBtn(page,7,8, SeekKeyFi(deck, 8, 0.5, "hi_yellow", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,7, SeekKeyFi(deck, 0, 0.25, "lo_red", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,6, SeekKeyFi(deck, 1, 0.25, "lo_red", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,5, SeekKeyFi(deck, 2, 0.25, "lo_red", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,4, SeekKeyFi(deck, 3, 0.25, "lo_red", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,3, SeekKeyFi(deck, 4, 0.25, "max_red", "lo_white", "parameter1", 8));
+            NLM.setupBtn(page,7,2, SeekKeyFi(deck, 5, 0.25, "hi_red", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,1, SeekKeyFi(deck, 5, 0.35, "hi_red", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,0, SeekKeyFi(deck, 6, 0.4166, "hi_red", "black", "parameter1", 8));
+            NLM.setupBtn(page,7,8, SeekKeyFi(deck, 8, 0.5, "hi_red", "black", "parameter1", 8));
           // ========================================
         // ==========================================
         // ================ PAGE C ==================
@@ -1848,7 +1860,7 @@ NLM.init = function()
             NLM.setupBtn(page,2,7, SeekKey2(deck, 0, 0.33, "lo_green", "black", "pregain", 1));
             NLM.setupBtn(page,2,6, SeekKey2(deck, 1, 0.33, "lo_green", "black", "pregain", 1));
             NLM.setupBtn(page,2,5, SeekKey2(deck, 2, 0.33, "lo_green", "black", "pregain", 1));
-            NLM.setupBtn(page,2,4, SeekKey2(deck, 3, 0.33, "hi_yellow", "lo_amber", "pregain", 1));
+            NLM.setupBtn(page,2,4, SeekKey2(deck, 3, 0.33, "hi_yellow", "lo_yellow", "pregain", 1));
             NLM.setupBtn(page,2,3, SeekKey2(deck, 4, 0.33, "hi_green", "black", "pregain", 1));
             NLM.setupBtn(page,2,2, SeekKey2(deck, 5, 0.33, "hi_green", "black", "pregain", 1));
             NLM.setupBtn(page,2,1, SeekKey2(deck, 6, 0.33, "hi_green", "black", "pregain", 1));
@@ -1856,27 +1868,27 @@ NLM.init = function()
           // ============ CHANNEL 1 ==============
             deck = 1;
             // VOLUME
-            NLM.setupBtn(page,3,7, SeekKey2(deck, 0, 0.12, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,6, SeekKey2(deck, 1, 0.12, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,5, SeekKey2(deck, 2, 0.12, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,4, SeekKey2(deck, 3, 0.12, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,3, SeekKey2(deck, 4, 0.12, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,2, SeekKey2(deck, 5, 0.12, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,1, SeekKey2(deck, 6, 0.12, "hi_amber", "black", "volume", 9));
-            NLM.setupBtn(page,3,0, SeekKey2(deck, 7, 0.12, "hi_amber", "black", "volume", 9));
+            NLM.setupBtn(page,3,7, SeekKey2(deck, 0, 0.12, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,6, SeekKey2(deck, 1, 0.12, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,5, SeekKey2(deck, 2, 0.12, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,4, SeekKey2(deck, 3, 0.12, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,3, SeekKey2(deck, 4, 0.12, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,2, SeekKey2(deck, 5, 0.12, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,1, SeekKey2(deck, 6, 0.12, "hi_yellow", "black", "volume", 9));
+            NLM.setupBtn(page,3,0, SeekKey2(deck, 7, 0.12, "hi_yellow", "black", "volume", 9));
             NLM.setupBtn(page,3,8, SeekKey2(deck, 8, 0.12, "hi_yellow", "black", "volume", 9));
           // =====================================
           // ============ CHANNEL 2 ==============
             deck = 2;
             // VOLUME
-            NLM.setupBtn(page,4,7, SeekKey2(deck, 0, 0.12, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,6, SeekKey2(deck, 1, 0.12, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,5, SeekKey2(deck, 2, 0.12, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,4, SeekKey2(deck, 3, 0.12, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,3, SeekKey2(deck, 4, 0.12, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,2, SeekKey2(deck, 5, 0.12, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,1, SeekKey2(deck, 6, 0.12, "hi_amber", "black", "volume", 10));
-            NLM.setupBtn(page,4,0, SeekKey2(deck, 7, 0.12, "hi_amber", "black", "volume", 10));
+            NLM.setupBtn(page,4,7, SeekKey2(deck, 0, 0.12, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,6, SeekKey2(deck, 1, 0.12, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,5, SeekKey2(deck, 2, 0.12, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,4, SeekKey2(deck, 3, 0.12, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,3, SeekKey2(deck, 4, 0.12, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,2, SeekKey2(deck, 5, 0.12, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,1, SeekKey2(deck, 6, 0.12, "hi_yellow", "black", "volume", 10));
+            NLM.setupBtn(page,4,0, SeekKey2(deck, 7, 0.12, "hi_yellow", "black", "volume", 10));
             NLM.setupBtn(page,4,8, SeekKey2(deck, 8, 0.12, "hi_yellow", "black", "volume", 10));
           // =====================================
 		  // ============== PREGAIN 2 ===============
@@ -1885,7 +1897,7 @@ NLM.init = function()
             NLM.setupBtn(page,5,7, SeekKey2(deck, 0, 0.33, "lo_green", "black", "pregain", 5));
             NLM.setupBtn(page,5,6, SeekKey2(deck, 1, 0.33, "lo_green", "black", "pregain", 5));
             NLM.setupBtn(page,5,5, SeekKey2(deck, 2, 0.33, "lo_green", "black", "pregain", 5));
-            NLM.setupBtn(page,5,4, SeekKey2(deck, 3, 0.33, "hi_yellow", "lo_amber", "pregain", 5));
+            NLM.setupBtn(page,5,4, SeekKey2(deck, 3, 0.33, "hi_yellow", "lo_yellow", "pregain", 5));
             NLM.setupBtn(page,5,3, SeekKey2(deck, 4, 0.33, "hi_green", "black", "pregain", 5));
             NLM.setupBtn(page,5,2, SeekKey2(deck, 5, 0.33, "hi_green", "black", "pregain", 5));
             NLM.setupBtn(page,5,1, SeekKey2(deck, 6, 0.33, "hi_green", "black", "pregain", 5));
@@ -2273,19 +2285,19 @@ NLM.init = function()
           page = 7;		  
 
             // NAVIGATE
-            NLM.setupBtn(page,1,0, PushKeyBin("hi_orange", "hi_amber", "[Library]", "ScrollVertical", -1));
-            NLM.setupBtn(page,0,0, PushKeyBin("hi_yellow", "hi_amber", "[Library]", "MoveVertical", -1));
-            NLM.setupBtn(page,0,1, PushKeyBin("hi_green", "hi_amber", "[Library]", "GoToItem", 1));
-            NLM.setupBtn(page,1,1, PushKeyBin("lo_red", "hi_amber", "[Library]", "MoveFocusForward", 1));
-            NLM.setupBtn(page,0,2, PushKeyBin("hi_yellow", "hi_amber", "[Library]", "MoveVertical", 1));
-            NLM.setupBtn(page,1,2, PushKeyBin("hi_orange", "hi_amber", "[Library]", "ScrollVertical", 1));
+            NLM.setupBtn(page,1,0, PushKeyBin("hi_orange", "hi_yellow", "[Library]", "ScrollVertical", -1));
+            NLM.setupBtn(page,0,0, PushKeyBin("hi_yellow", "hi_yellow", "[Library]", "MoveVertical", -1));
+            NLM.setupBtn(page,0,1, PushKeyBin("hi_green", "hi_yellow", "[Library]", "GoToItem", 1));
+            NLM.setupBtn(page,1,1, PushKeyBin("lo_red", "hi_yellow", "[Library]", "MoveFocusForward", 1));
+            NLM.setupBtn(page,0,2, PushKeyBin("hi_yellow", "hi_yellow", "[Library]", "MoveVertical", 1));
+            NLM.setupBtn(page,1,2, PushKeyBin("hi_orange", "hi_yellow", "[Library]", "ScrollVertical", 1));
 			
             // LOAD TRACK
             // AUTODJ
-            NLM.setupBtn(page,4,0, PushKeyBinADJ("hi_yellow", "hi_amber", "[Library]", "AutoDjAddTop", 1));
-            NLM.setupBtn(page,5,0, PushKeyBinADJ("hi_yellow", "hi_amber", "[Library]", "AutoDjAddBottom", 1));
+            NLM.setupBtn(page,4,0, PushKeyBinADJ("hi_yellow", "hi_yellow", "[Library]", "AutoDjAddTop", 1));
+            NLM.setupBtn(page,5,0, PushKeyBinADJ("hi_yellow", "hi_yellow", "[Library]", "AutoDjAddBottom", 1));
             NLM.setupBtn(page,6,0, PushKeyBin("hi_green", "hi_green", "[AutoDJ]", "fade_now", 1));
-            NLM.setupBtn(page,7,0, PushKeyBin("hi_red", "hi_amber", "[AutoDJ]", "skip_next", 1));
+            NLM.setupBtn(page,7,0, PushKeyBin("hi_red", "hi_yellow", "[AutoDJ]", "skip_next", 1));
 			// DECKS 1 & 2
             NLM.setupBtn(page,4,1, LoadKey("Channel",1, "hi_green", "hi_red"));
             NLM.setupBtn(page,5,1, LoadKey("Channel",2, "hi_red", "hi_red"));
@@ -2302,7 +2314,7 @@ NLM.init = function()
 
               // PROGRESSO D1
 			  deck = 1;
-			  color = "hi_amber";
+			  color = "hi_yellow";
               NLM.setupBtn(page,0,4, SeekKey(deck, 0, color));
               NLM.setupBtn(page,1,4, SeekKey(deck, 1, color));
               NLM.setupBtn(page,2,4, SeekKey(deck, 2, color));
@@ -2343,10 +2355,10 @@ NLM.init = function()
             NLM.setupBtn(page,0,8, ZoomKey("-"));
             NLM.setupBtn(page,1,8, ZoomKey("+"));
             // 
-            NLM.setupBtn(page,2,8, PushKeyBin("hi_green", "hi_amber", "[Library]", "font_size_increment", 1));
-            NLM.setupBtn(page,3,8, PushKeyBin("hi_green", "hi_amber", "[Library]", "font_size_decrement", 1));
+            NLM.setupBtn(page,2,8, PushKeyBin("hi_green", "hi_yellow", "[Library]", "font_size_increment", 1));
+            NLM.setupBtn(page,3,8, PushKeyBin("hi_green", "hi_yellow", "[Library]", "font_size_decrement", 1));
             NLM.setupBtn(page,4,8, ToogleLibrary("[Master]"));
-            NLM.setupBtn(page,6,8, PushKeyBin("hi_orange", "hi_amber", "[Master]", "crossfader", 0));
+            NLM.setupBtn(page,6,8, PushKeyBin("hi_orange", "hi_yellow", "[Master]", "crossfader", 0));
             NLM.setupBtn(page,7,8, AutoDJ_enable());
         //  =========================================
         //  ===========================================
@@ -2376,33 +2388,14 @@ NLM.incomingData = function(channel, control, value, status, group)
         //Just to make life easier
 
         var pressed = (value === 127);
+
         //Translate midi btn into index
-
-        /*
-        // Formula for old Launchpad model, using multiples of 16 to start each row
-        var y = Math.floor(control / 16);
-        var x = control - y * 16;
-	*/
-
-        // Formula for Launchpad Mini Mk3, using new MIDI layout for Programmer Mode
         if ( control < 90 ) {
             var y = Math.floor(Math.abs((control / 10 - 2) - 7))
         } else {
             var y = Math.floor(control / 10 - 1)
-	}
-	var x = control % 10 - 1
-    
-    // This code prevents Page 7 from working with the new Launchpad layout
-    /*
-        if ( y === 6 && x > 8 ) {
-            y = 8;
-            x -= 8;
         }
-        if ( y === 6 && x === 8 && status === 176 ) {
-            y = 8; x = 0;
-        }
-    */
-
+        var x = control % 10 - 1
         print( "COO: " + NLM.page + ":" + x + ":" + y);
         NLM.btns[NLM.page][x][y].pressed = pressed;
         NLM.btns[NLM.page][x][y].callback();
